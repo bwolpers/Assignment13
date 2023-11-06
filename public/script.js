@@ -17,7 +17,7 @@ const showBooks = async () => {
     bookContainer.appendChild(h2);
 
     const pAuthor = document.createElement('p');
-    pAuthor.innerHTML = `Author: ${book.author}`;
+    pAuthor.innerHTML = `by ${book.author}`;
     bookContainer.appendChild(pAuthor);
 
     const pGenre = document.createElement('p');
@@ -33,7 +33,7 @@ const showBooks = async () => {
     bookContainer.appendChild(pDescription);
 
     const h3Reviews = document.createElement('h3');
-    h3Reviews.innerHTML = 'Reviews:';
+    h3Reviews.innerHTML = 'Reviews';
     bookContainer.appendChild(h3Reviews);
 
     const ulReviews = document.createElement('ul');
