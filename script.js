@@ -21,3 +21,5 @@ fetch('/api/data')
       container.appendChild(bookElement);
     });
   });
+
+console.log('Starting the client-side script');
