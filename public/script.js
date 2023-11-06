@@ -46,7 +46,7 @@ const showBooks = async () => {
     });
 
     const img = document.createElement('img');
-    img.src = `http://localhost:3000/${book.imageLink}`;
+    img.src = `${book.imageLink}`;
     img.alt = `${book.title} Cover`;
     bookContainer.appendChild(img);
   });
@@ -57,7 +57,7 @@ const showBooks = async () => {
 
 const getBooks = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/data');
+    const response = await fetch('/api/data');
     const data = await response.json();
 
     const books = data.map((bookData) => {
