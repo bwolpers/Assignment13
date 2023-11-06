@@ -1,3 +1,67 @@
-p {
-    color: red;
+/* Style the container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
+
+/* Style the book container */
+.book-container {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the book title */
+h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Style author, genre, and publication information */
+p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Style the reviews section */
+h3 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Style individual reviews */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Style the book cover image */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Center the image horizontally */
+    margin: 0 auto; /* Center the image horizontally */
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+

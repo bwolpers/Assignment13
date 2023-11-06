@@ -8,35 +8,36 @@ const showBooks = async () => {
   }
 
   fetchedBooks.forEach((book) => {
-    const bookElement = document.createElement('div');
-    container.appendChild(bookElement);
+    const bookContainer = document.createElement('div');
+    bookContainer.classList.add('book-container'); // Add the book container class
+    container.appendChild(bookContainer);
 
     const h2 = document.createElement('h2');
     h2.innerHTML = book.title;
-    bookElement.appendChild(h2);
+    bookContainer.appendChild(h2);
 
     const pAuthor = document.createElement('p');
     pAuthor.innerHTML = `Author: ${book.author}`;
-    bookElement.appendChild(pAuthor);
+    bookContainer.appendChild(pAuthor);
 
     const pGenre = document.createElement('p');
     pGenre.innerHTML = `Genre: ${book.genre}`;
-    bookElement.appendChild(pGenre);
+    bookContainer.appendChild(pGenre);
 
     const pPublished = document.createElement('p');
     pPublished.innerHTML = `Published: ${book.publicationYear}`;
-    bookElement.appendChild(pPublished);
+    bookContainer.appendChild(pPublished);
 
     const pDescription = document.createElement('p');
     pDescription.innerHTML = book.description;
-    bookElement.appendChild(pDescription);
+    bookContainer.appendChild(pDescription);
 
     const h3Reviews = document.createElement('h3');
     h3Reviews.innerHTML = 'Reviews:';
-    bookElement.appendChild(h3Reviews);
+    bookContainer.appendChild(h3Reviews);
 
     const ulReviews = document.createElement('ul');
-    bookElement.appendChild(ulReviews);
+    bookContainer.appendChild(ulReviews);
 
     book.reviews.forEach((review) => {
       const liReview = document.createElement('li');
@@ -47,9 +48,12 @@ const showBooks = async () => {
     const img = document.createElement('img');
     img.src = `http://localhost:3000/${book.imageLink}`;
     img.alt = `${book.title} Cover`;
-    bookElement.appendChild(img);
+    bookContainer.appendChild(img);
   });
 };
+
+
+
 
 const getBooks = async () => {
   try {
