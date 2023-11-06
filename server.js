@@ -1,14 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000; // Use the default port or 3000
-app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
 
-const bookData = [
-    {
+
+app.get('/api/data', (req, res) => {
+  const bookData = [];
+    bookdata[0] ={
       id: 1,
       title: 'Book 1',
       author: 'Author 1',
@@ -20,14 +17,19 @@ const bookData = [
         'Review 2',
         'Review 3'
       ],
-      imageLink: 'link-to-book-cover-1.jpg',
-    },
+      imageLink: 'images/bookCover.jpg',
+    };
 
-  ];
-
-app.get('/api/data', (req, res) => {
   res.json(bookData); 
 });
+
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
+
+const port = 3000; // Define the port
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
