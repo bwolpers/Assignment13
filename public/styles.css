@@ -1,4 +1,4 @@
-/* Style the container */
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -9,37 +9,37 @@
     text-align: center;
 }
 
-/* Style the book container */
+
 .book-container {
-    margin-bottom: 30px; /* Increased margin for better spacing */
+    margin-bottom: 30px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid #ddd;
-    padding: 30px; /* Increased padding for better spacing */
+    padding: 30px; 
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-/* Style the book info and reviews container */
+
 .info-reviews-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 30px; /* Increased margin for better spacing */
+    margin-bottom: 30px; 
     text-align: center;
 }
 
-/* Style the book info */
+
 .book-info {
     flex: 1;
-    padding-right: 30px; /* Increased space between info and reviews */
+    padding-right: 30px; 
     text-align: center;
 }
 
-/* Style the book title */
+
 h2 {
     font-size: 24px;
     color: #333;
@@ -48,19 +48,19 @@ h2 {
     
 }
 
-/* Style author, genre, and publication information */
+
 p {
     font-size: 16px;
     color: #555;
-    margin: 15px 0; /* Increased margin for better spacing */
+    margin: 15px 0; 
     text-align: center;
 }
 
-/* Style the reviews section */
+
 .reviews {
     flex: 1;
     text-align: center;
-    margin-bottom: 20px; /* Increased margin below the reviews section */
+    margin-bottom: 20px; 
 }
 
 h3 {
@@ -71,7 +71,7 @@ h3 {
     margin-top: 40px;
 }
 
-/* Style individual reviews */
+
 ul {
     list-style: none;
     padding: 0;
@@ -81,16 +81,16 @@ ul {
 li {
     font-size: 16px;
     color: #555;
-    margin: 15px 0; /* Increased margin for better spacing */
+    margin: 15px 0; 
     text-align: center;
 }
 
-/* Style the book cover image */
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
-    margin-top: 30px; /* Increased margin for better spacing */
+    margin-top: 30px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
