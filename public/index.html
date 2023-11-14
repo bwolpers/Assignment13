@@ -1,12 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Books</title>
 </head>
+
 <body>
-  <div class="container" id="book-container">
-  </div>
-  <script src="script.js"></script>
+    <header>
+        <h1>Books</h1>
+    </header>
+
+    <div class="columns two-columns">
+        <div id="book-list" class="columns book"></div>
+        <div id="book-details-column">
+            <h2>Details</h2>
+            <div id="book-details"></div>
+        </div>
+    </div>
+
+    <div id="add-book-container" class="dialog transparent">
+        <h3 id="add-title">Add Book</h3>
+        <form id="add-book-form" method="post">
+            <input type="hidden" name="_id" value="-1" />
+            <div class="label-input">
+                <label for="title">Book Title:</label>
+                <input type="text" id="title" name="title" required />
+            </div>
+            <div class="label-input">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required />
+            </div>
+            <div class="label-input">
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre" required />
+            </div>
+            <div class="label-input">
+                <label for="publicationYear">Publication Year:</label>
+                <input type="text" id="publicationYear" name="publicationYear" required />
+            </div>
+            <div class="label-input">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required />
+            </div>
+            <div id="reviews-p">
+                <a href="#" id="add-review">Add Review</a>
+                <section id="review-boxes"></section>
+            </div>
+            <div>
+                <button type="submit" id="submit-button">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
+
 </html>
