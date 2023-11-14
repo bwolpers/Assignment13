@@ -75,12 +75,12 @@ p {
 .label-input {
     margin-bottom: 20px;
     text-align: left; 
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-right: 400px;
+    margin-left: 400px;
 }
 
 .label-input input {
-    width: 60%;
+    width: 50%;
     padding: 5px;
     align-items: right;
     justify-content: right;
@@ -88,7 +88,7 @@ p {
 }
 
 .label-input label {
-    width: 40%; 
+    width: 50%; 
     margin-bottom: 5px; 
     
 }
@@ -139,8 +139,13 @@ li {
     margin: 15px 0;
     text-align: center;
 }
-
-@media screen and (max-width: 600px) {
+.success-message {
+    display: none;
+    color: rgb(32, 70, 32);
+    font-size: 18px;
+    margin-top: 10px;
+}
+@media screen and (max-width: 1000px) {
     .label-input {
         margin-right: 5%;
         margin-left: 5%;

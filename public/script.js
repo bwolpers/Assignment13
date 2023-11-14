@@ -112,42 +112,51 @@ document.addEventListener("DOMContentLoaded", () => {
           ulReviews.appendChild(li);
       });
   };
+  const showSuccessMessage = (message) => {
+    const successMessage = document.getElementById("success-message");
+    successMessage.textContent = message;
 
-  const addBook = async (e) => {
-      e.preventDefault();
-      const form = document.getElementById("add-book-form");
-      const formData = new FormData(form);
+    successMessage.style.display = "block";
 
-      const publicationYear = formData.get("publicationYear");
-      if (isNaN(publicationYear)) {
-          console.log("Publication Year must be a number");
-          return;
-      }
+    setTimeout(() => {
+        successMessage.style.display = "none";
+    }, 3000);
+};
+const addBook = async (e) => {
+  e.preventDefault();
+  const form = document.getElementById("add-book-form");
+  const formData = new FormData(form);
 
-      if (form._id.value == -1) {
-          formData.delete("_id");
-          formData.append("reviews", getReviews());
+  const publicationYear = formData.get("publicationYear");
+  if (isNaN(publicationYear)) {
+      console.log("Publication Year must be a number");
+      return;
+  }
 
-          try {
-              const response = await fetch("/api/books", {
-                  method: "POST",
-                  body: formData,
-              });
+  if (form._id.value == -1) {
+      formData.delete("_id");
+      formData.append("reviews", getReviews());
 
-              if (!response.ok) {
-                  console.log("Error posting data");
-                  return;
-              }
+      try {
+          const response = await fetch("/api/books", {
+              method: "POST",
+              body: formData,
+          });
 
-              const responseData = await response.json();
-              resetForm();
-              document.querySelector(".dialog").classList.add("transparent");
-              showBooks();
-          } catch (error) {
-              console.error("Error posting data:", error);
+          if (!response.ok) {
+              console.log("Error posting data");
+              return;
           }
+
+          resetForm();
+          document.querySelector(".dialog").classList.add("transparent");
+          showBooks();
+          showSuccessMessage("Book added successfully!");
+      } catch (error) {
+          console.error("Error posting data:", error);
       }
-  };
+  }
+};
 
   const resetForm = () => {
       const form = document.getElementById("add-book-form");
