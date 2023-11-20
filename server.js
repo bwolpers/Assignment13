@@ -74,6 +74,53 @@ app.post("/api/books", upload.single("img"), async (req, res) => {
     }
 });
 
+app.patch("/api/books/:id", (req, res) => {
+    const bookId = parseInt(req.params.id);
+    const updatedFields = req.body;
+
+    console.log("Received PATCH request for book ID:", bookId);
+    console.log("Updated Fields:", updatedFields);
+    console.log("Current Books Array:", books);
+
+    const index = books.findIndex((book) => book._id === bookId);
+
+    if (index !== -1) {
+        books[index] = {
+            ...books[index],
+            title: updatedFields.title,
+            author: updatedFields.author,
+            genre: updatedFields.genre,
+            publicationYear: parseInt(updatedFields.publicationYear),
+            description: updatedFields.description,
+            reviews: updatedFields.reviews
+        };
+
+        console.log("Updated Books Array:", books);
+
+        res.send(books);
+    } else {
+        console.log("Book not found for ID:", bookId);
+        console.log("Current Books Array:", books);
+        res.status(404).send("Book not found");
+    }
+});
+
+app.delete("/api/books/:id", (req, res) => {
+    const bookId = parseInt(req.params.id);
+
+    const index = books.findIndex((book) => book._id === bookId);
+
+    if (index !== -1) {
+        books.splice(index, 1);
+
+        res.send(books);
+    } else {
+        console.log("Book not found for ID:", bookId);
+        console.log("Current Books Array:", books);
+        res.status(404).send("Book not found");
+    }
+});
+
 const validateBookInput = (book) => {
     const schema = Joi.object({
         _id: Joi.allow(""),

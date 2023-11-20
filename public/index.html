@@ -21,10 +21,11 @@
         </div>
     </div>
     <div id="success-message" class="success-message"></div>
+    <div id="error-message" class="error-message"></div>
     <div id="add-book-container" class="dialog transparent">
-        <h3 id="add-title">Add Book</h3>
+        <h3 id="add-edit-title">Add Book</h3>
         <form id="add-book-form" method="post">
-            <input type="hidden" name="_id" value="-1" />
+            <input type="hidden" name="_id" id="_id" value="-1" />
             <div class="label-input">
                 <label for="title">Book Title:</label>
                 <input type="text" id="title" name="title" required />
@@ -51,7 +52,6 @@
             </div>
             <div>
                 <button type="submit" id="submit-button">Submit</button>
-                
             </div>
         </form>
     </div>
